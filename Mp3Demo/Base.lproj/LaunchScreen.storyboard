@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +16,33 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mysong.png" translatesAutoresizingMaskIntoConstraints="NO" id="UY3-Vx-p3q">
+                                <rect key="frame" x="220" y="220" width="160" height="159"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="b4n-rb-JDs"/>
+                                    <constraint firstAttribute="height" constant="159" id="lj6-Hj-bpp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY SONGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-mf-fxf">
+                                <rect key="frame" x="220" y="115" width="160" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="UJA-NH-oXh"/>
+                                    <constraint firstAttribute="height" constant="75" id="XK4-zt-Pnz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UY3-Vx-p3q" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3hG-3h-OuL"/>
+                            <constraint firstItem="9Cg-mf-fxf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-147.5" id="Bsg-s3-885"/>
+                            <constraint firstItem="UY3-Vx-p3q" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-0.5" id="YgT-9j-Fcn"/>
+                            <constraint firstItem="9Cg-mf-fxf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lmm-HF-uC1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +50,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mysong.png" width="180" height="180"/>
+    </resources>
 </document>

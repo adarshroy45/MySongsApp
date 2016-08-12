@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  Mp3Demo
 //
-//  Created by Samrat Pramanik on 15/06/16.
+//  Created by Adarsh Roy on 15/06/16.
 //  Copyright © 2016 INT. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     return YES;
 }
 
@@ -24,10 +25,20 @@
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
-
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"content---%@", token);
+    
+}
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+//    NSError *setCategoryErr = nil;
+//    NSError *activationErr  = nil;
+//    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+//    [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
